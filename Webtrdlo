@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Trdelník - Vôňa, chuť, tradícia</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fff8f0; color: #5a3e1b; }
+  header { background: #d2691e; color: white; padding: 1rem; text-align: center; font-size: 1.5rem; font-weight: bold; }
+  .flavor-section { padding: 1rem; }
+  h2 { color: #a0522d; }
+  .flavor-list { list-style: none; padding: 0; }
+  .flavor-list li { margin: 0.5rem 0; font-weight: 600; }
+  .lang-switch { margin: 1rem; text-align: center; }
+  button { margin: 0 0.5rem; padding: 0.5rem 1rem; border: none; background: #a0522d; color: white; font-weight: bold; border-radius: 5px; cursor: pointer; }
+  button:hover { background: #7a3c11; }
+  footer { background: #d2691e; color: white; text-align: center; padding: 1rem; position: fixed; bottom: 0; width: 100%; }
+  a { color: white; text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<header id="header-text">Vôňa, chuť, tradícia. Objav Trdelník, ako ho ešte nepoznáš!</header>
+
+<div class="lang-switch">
+  <button onclick="setLanguage('sk')">SK</button>
+  <button onclick="setLanguage('hu')">HU</button>
+  <button onclick="setLanguage('en')">EN</button>
+</div>
+
+<section class="flavor-section" id="flavor-section">
+  <h2>Naše chute</h2>
+  <ul class="flavor-list" id="flavor-list">
+    <li>Dió</li>
+    <li>Fahéj</li>
+    <li>Csoki</li>
+    <li>Vanília</li>
+    <li>Kókusz</li>
+    <li>Bounty (csoki-kókusz)</li>
+    <li>Raffaello (kókusz-mandula)</li>
+    <li>Nutella</li>
+  </ul>
+</section>
+
+<footer>
+  <button onclick="window.open('https://www.instagram.com/yourprofile','_blank')">Instagram</button>
+  <button onclick="window.open('https://maps.google.com?q=your+location','_blank')">Kde sme dnes?</button>
+</footer>
+
+<script>
+  const texts = {
+    sk: {
+      header: "Vôňa, chuť, tradícia. Objav Trdelník, ako ho ešte nepoznáš!",
+      flavorTitle: "Naše chute",
+      flavors: ["Orech", "Škorica", "Čokoláda", "Vanilka", "Kokos", "Bounty (čokoláda-kokos)", "Raffaello (kokos-mandle)", "Nutella"],
+      instagram: "Instagram",
+      location: "Kde sme dnes?"
+    },
+    hu: {
+      header: "Illat, íz, tradíció. Fedezd fel a kürtőskalácsot, ahogy még nem ismerted!",
+      flavorTitle: "Ízeink",
+      flavors: ["Dió", "Fahéj", "Csoki", "Vanília", "Kókusz", "Bounty (csoki-kókusz)", "Raffaello (kókusz-mandula)", "Nutella"],
+      instagram: "Instagram",
+      location: "Hol vagyunk ma?"
+    },
+    en: {
+      header: "Aroma, taste, tradition. Discover Trdelník like never before!",
+      flavorTitle: "Our flavors",
+      flavors: ["Walnut", "Cinnamon", "Chocolate", "Vanilla", "Coconut", "Bounty (chocolate-coconut)", "Raffaello (coconut-almond)", "Nutella"],
+      instagram: "Instagram",
+      location: "Where are we today?"
+    }
+  };
+
+  function setLanguage(lang) {
+    document.getElementById("header-text").textContent = texts[lang].header;
+    document.querySelector(".flavor-section h2").textContent = texts[lang].flavorTitle;
+    const flavorList = document.getElementById("flavor-list");
+    flavorList.innerHTML = "";
+    texts[lang].flavors.forEach(flavor => {
+      const li = document.createElement("li");
+      li.textContent = flavor;
+      flavorList.appendChild(li);
+    });
+    document.querySelector("footer button:nth-child(1)").textContent = texts[lang].instagram;
+    document.querySelector("footer button:nth-child(2)").textContent = texts[lang].location;
+  }
+
+  // Alap nyelv SK
+  setLanguage('sk');
+</script>
+
+</body>
+</html>

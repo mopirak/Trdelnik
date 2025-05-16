@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trdelník</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Trdelník</h1>
+    <p id="slogan">Vôňa, chuť, tradícia. Objav Trdelník, ako ho ešte nepoznáš!</p>
+  </header>
+  <main>
+    <section id="animation">
+      <div class="chimney-cake"></div>
+    </section>
+    <section id="flavors">
+      <div class="flavor" data-sk="Orech" data-hu="Dió" data-en="Walnut"></div>
+      <div class="flavor" data-sk="Škorica" data-hu="Fahéj" data-en="Cinnamon"></div>
+      <div class="flavor" data-sk="Granko" data-hu="Grankó" data-en="Cocoa"></div>
+      <div class="flavor" data-sk="Vanilka" data-hu="Vanília" data-en="Vanilla"></div>
+      <div class="flavor" data-sk="Kokos" data-hu="Kókusz" data-en="Coconut"></div>
+      <div class="flavor" data-sk="Bounty" data-hu="Bounty" data-en="Bounty"></div>
+      <div class="flavor" data-sk="Raffaello" data-hu="Raffaello" data-en="Raffaello"></div>
+      <div class="flavor" data-sk="Nutella (v strede)" data-hu="Nutella (a közepébe)" data-en="Nutella (inside)"></div>
+    </section>
+    <section id="links">
+      <button onclick="findUs()"></button>
+      <div class="socials">
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://maps.google.com" target="_blank">Google Maps</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <select id="language" onchange="setLanguage()">
+      <option value="sk">Slovensky</option>
+      <option value="hu">Magyar</option>
+      <option value="en">English</option>
+    </select>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
